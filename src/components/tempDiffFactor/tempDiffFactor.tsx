@@ -1,4 +1,4 @@
-import { Input } from "../input/input";
+import { Input } from "../input/Input";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { Difference } from "../difference/difference";
 import { Result } from "../result/result";
