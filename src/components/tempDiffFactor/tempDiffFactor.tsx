@@ -7,8 +7,14 @@ import useTempDiffFactorStore from "../../useTempDiffFactorStore";
 import "./temp-diff-factor.scss";
 
 export const TempDiffFactor = () => {
-  const { outdoorTemp, indoorTemp, setOutdoorTemp, setIndoorTemp } =
-    useTempDiffFactorStore();
+  const {
+    outdoorTemp,
+    indoorTemp,
+    difference,
+    result,
+    setOutdoorTemp,
+    setIndoorTemp,
+  } = useTempDiffFactorStore();
 
   const handleOutdoorTempChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newOutdoorTempValue = parseFloat(e.target.value);
@@ -20,14 +26,7 @@ export const TempDiffFactor = () => {
     setIndoorTemp(newIndoorTempValue);
   };
 
-  const getDifference = () => {
-    return outdoorTemp - indoorTemp;
-  };
-
-  const getTempDiffFactor = () => {
-    const difference = getDifference();
-    return difference / 24;
-  };
+  console.log("Result", result);
 
   return (
     <>
@@ -72,7 +71,7 @@ export const TempDiffFactor = () => {
                 <Form.Group>
                   <Form.Label>Difference</Form.Label>
                   <div className="d-flex align-items-center">
-                    <Difference number={getDifference()} />
+                    <Difference number={difference} />
                     <span>=</span>
                   </div>
                 </Form.Group>
@@ -80,7 +79,7 @@ export const TempDiffFactor = () => {
               <Col lg="3" className="d-flex align-items-center">
                 <Result
                   heading="Temperature Difference Factor"
-                  number={getTempDiffFactor()}
+                  number={result}
                 />
               </Col>
             </Row>

@@ -4,55 +4,31 @@ import { CheckBox } from "../checkBox/checkBox";
 import useInsulFactorStore from "../../useInsulFactorStore";
 
 export const InsulFactor = () => {
-  const {
-    insul,
-    wellInsul,
-    poorlyInsul,
-    notInsul,
-    setInsul,
-    setWellInsul,
-    setPoorlyInsul,
-    setNotInsul,
-  } = useInsulFactorStore();
+  const { insul, setInsul } = useInsulFactorStore();
 
+  enum insulLevels {
+    GOOD = 2,
+    MED = 4,
+    POOR = 7,
+    NONE = 8.5,
+  }
+
+  // 2 4 7 8.5
   const handleInsulChange = () => {
-    setInsul(2);
+    setInsul(insulLevels.GOOD);
   };
 
   const handleWellInsulChange = () => {
-    setWellInsul(4);
+    setInsul(insulLevels.MED);
   };
 
   const handlePoorlyInsulChange = () => {
-    setPoorlyInsul(7);
+    setInsul(insulLevels.POOR);
   };
 
   const handleNotInsulChange = () => {
-    setNotInsul(8.5);
+    setInsul(insulLevels.NONE);
   };
-
-  const getInsulFactor = () => {
-    if (insul) {
-      return insul;
-    }
-    if (wellInsul) {
-      return wellInsul;
-    }
-    if (poorlyInsul) {
-      return poorlyInsul;
-    }
-    if (notInsul) {
-      return notInsul;
-    }
-    return insul;
-  };
-
-  console.log("Insulated", insul);
-  console.log("Well Insulated", wellInsul);
-  console.log("Poorly Insulated", poorlyInsul);
-  console.log("Not Insulated", notInsul);
-
-  console.log("When clicked on Factor", getInsulFactor());
 
   return (
     <>
@@ -70,7 +46,7 @@ export const InsulFactor = () => {
                 desc="Enclosed area with doors and windows in place."
                 id="insulated"
                 name="insulation"
-                checked={insul === 2}
+                checked={insul === insulLevels.GOOD}
                 onChange={handleInsulChange}
               />
             </Col>
@@ -80,7 +56,7 @@ export const InsulFactor = () => {
                 desc="Sealed environment. Walls constructed but lacking insulation. Doors and windows shielded with plastic sheets or tarps."
                 id="well-insulated"
                 name="insulation"
-                checked={wellInsul === 4}
+                checked={insul === insulLevels.MED}
                 onChange={handleWellInsulChange}
               />
             </Col>
@@ -93,7 +69,7 @@ export const InsulFactor = () => {
                 desc="Semi-enclosed area with numerous walls in place."
                 id="poorly-insulated"
                 name="insulation"
-                checked={poorlyInsul === 7.5}
+                checked={insul === insulLevels.POOR}
                 onChange={handlePoorlyInsulChange}
               />
             </Col>
@@ -103,12 +79,12 @@ export const InsulFactor = () => {
                 desc="Uncovered area with primary walls not yet built."
                 id="not-insulated"
                 name="insulation"
-                checked={notInsul === 8}
+                checked={insul === insulLevels.NONE}
                 onChange={handleNotInsulChange}
               />
             </Col>
             <Col lg="4">
-              <Result heading="Factor" number={getInsulFactor()} />
+              <Result heading="Factor" number={insul} />
             </Col>
           </Row>
         </div>
