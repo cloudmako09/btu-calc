@@ -10,7 +10,15 @@ export const FinalResult = () => {
   const { getInsul } = useInsulFactorStore();
 
   const finalResult = () => {
-    const result = getCalcResult() * getTempDiffResult() * getInsul();
+    const calcResult = getCalcResult();
+    const tempDiffResult = getTempDiffResult();
+    const insul = getInsul();
+
+    if (isNaN(calcResult) || isNaN(tempDiffResult) || isNaN(insul)) {
+      return "Invalid input"; // or handle the error in a way that makes sense for your application
+    }
+
+    const result = calcResult * tempDiffResult * insul;
     return result;
   };
 
