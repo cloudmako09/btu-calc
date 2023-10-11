@@ -15,7 +15,7 @@ export const FinalResult = () => {
     const insul = getInsul();
 
     if (isNaN(calcResult) || isNaN(tempDiffResult) || isNaN(insul)) {
-      return "Invalid input"; // or handle the error in a way that makes sense for your application
+      return "Invalid input";
     }
 
     const result = calcResult * tempDiffResult * insul;
