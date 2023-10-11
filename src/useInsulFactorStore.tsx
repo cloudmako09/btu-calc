@@ -4,12 +4,14 @@ import zukeeper from "zukeeper";
 interface useInsulFactor {
   insul: number;
   setInsul: (value: number) => void;
+  getInsul: () => number;
 }
 
 const useInsulFactorStore = create<useInsulFactor>(
-  zukeeper((set: any) => ({
+  zukeeper((set: any, get: any) => ({
     insul: 0,
     setInsul: (value: any) => set({ insul: value }),
+    getInsul: () => get().insul,
   }))
 );
 

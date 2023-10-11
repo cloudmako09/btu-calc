@@ -7,8 +7,15 @@ import "./square-feet.scss";
 import "../result/result.scss";
 
 export const SquareFeet = () => {
-  const { width, length, height, setWidth, setLength, setHeight, result } =
-    useCalcSquareFeetStore();
+  const {
+    width,
+    length,
+    height,
+    setWidth,
+    setLength,
+    setHeight,
+    getCalcResult,
+  } = useCalcSquareFeetStore();
 
   const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newWidthValue = parseFloat(e.target.value);
@@ -78,7 +85,7 @@ export const SquareFeet = () => {
               <Col lg="3">
                 <Result
                   heading="Number of square feet"
-                  number={result} // Use the function from the store
+                  number={getCalcResult()}
                 />
               </Col>
             </Row>
