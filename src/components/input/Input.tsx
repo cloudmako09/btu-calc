@@ -11,11 +11,12 @@ export const Input: React.FC<Props> = ({ placeholder, value, onChange }) => {
     <>
       <Form.Control
         type="number"
-        id="changethis"
+        id="input"
         onChange={onChange}
         placeholder={placeholder}
         value={value}
-        aria-describedby="changethis"
+        aria-describedby="input"
+        aria-label="input"
       />
     </>
   );

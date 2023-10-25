@@ -15,7 +15,7 @@ const useTempDiffFactorStore = create<useTempDiffFactor>((set, get) => ({
   setOutdoorTemp: (value) => set({ outdoorTemp: value }),
   setIndoorTemp: (value) => set({ indoorTemp: value }),
   getDifference: () => get().outdoorTemp - get().indoorTemp,
-  getTempDiffResult: () => get().getDifference() / 24,
+  getTempDiffResult: () => get().getDifference() * 0.02 + 0.2,
 }));
 
 export default useTempDiffFactorStore;

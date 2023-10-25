@@ -1,15 +1,15 @@
 @import "../../styles/breakpoints.scss";
 
 .square-feet {
+  .result {
+    @include bp-mobile {
+      margin-top: 20px;
+    }
+  }
   span {
     margin-left: 27px;
     @include bp-tablet-sm {
       margin-top: -20px;
-    }
-  }
-  input {
-    @include bp-tablet-sm {
-      margin-bottom: 20px;
     }
   }
 }

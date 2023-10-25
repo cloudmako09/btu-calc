@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Input } from "../input/Input";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { Difference } from "../difference/difference";
@@ -7,6 +8,7 @@ import useTempDiffFactorStore from "../../useTempDiffFactorStore";
 import "./temp-diff-factor.scss";
 
 export const TempDiffFactor = () => {
+  const { t } = useTranslation();
   const {
     outdoorTemp,
     indoorTemp,
@@ -33,15 +35,13 @@ export const TempDiffFactor = () => {
           <div className="box yellow">
             <Row>
               <Col lg="12">
-                <h2>
-                  Determine the temperature differential (in degrees Celsius).
-                </h2>
+                <h2>{t("tempDiffTitle")}</h2>
               </Col>
             </Row>
             <Row>
               <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Outdoor Temperature</Form.Label>
+                  <Form.Label>{t("tempDiffOutdoor")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Input
                       value={outdoorTemp}
@@ -54,7 +54,7 @@ export const TempDiffFactor = () => {
               </Col>
               <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Desired Indoor Temperature</Form.Label>
+                  <Form.Label>{t("tempDiffIndoor")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Input
                       value={indoorTemp}
@@ -65,9 +65,9 @@ export const TempDiffFactor = () => {
                   </div>
                 </Form.Group>
               </Col>
-              <Col lg="3">
+              <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Difference</Form.Label>
+                  <Form.Label>{t("tempDiffDifference")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Difference number={getDifference()} />
                     <span>=</span>
@@ -76,7 +76,7 @@ export const TempDiffFactor = () => {
               </Col>
               <Col lg="3" className="d-flex align-items-center">
                 <Result
-                  heading="Temperature Difference Factor"
+                  heading={t("tempDiffFactor")}
                   number={getTempDiffResult()}
                 />
               </Col>

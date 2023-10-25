@@ -5,11 +5,21 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+h2 {
+  border-left: none !important;
+  padding-left: 0px !important;
+}
+
+h4 {
+  margin-bottom: 0px;
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-weight: 700;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 .box {
@@ -28,9 +38,12 @@ h4 {
   p,
   label {
     color: $white;
+    font-family: "Montserrat", sans-serif;
   }
   h2 {
-    margin-bottom: 20px;
+    @include bp-tablet-sm {
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -38,6 +51,12 @@ h4 {
   background: $yellow;
   h2 {
     margin-bottom: 20px;
+    @include bp-tablet-sm {
+      margin-bottom: 0px;
+    }
+  }
+  label {
+    font-family: "Montserrat", sans-serif;
   }
 }
 
@@ -47,6 +66,6 @@ h4 {
 
 .form-control {
   border-radius: 0;
-  padding: 20px;
+  padding: 30px 20px 30px 20px;
   border: 3px solid $grey;
 }

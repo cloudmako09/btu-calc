@@ -1,0 +1,23 @@
+{
+  "cubicFeetTitle": "Determine the volume in cubic feet that needs heating.",
+  "cubicFeetWidth": "Width (ft)",
+  "cubicFeetLength": "Length (ft)",
+  "cubicFeetHeight": "Height (ft)",
+  "cubicFeetTotal": "Number of cubic feet",
+  "tempDiffTitle": "Determine the temperature differential (in degrees Celsius).",
+  "tempDiffOutdoor": "Outdoor Temperature",
+  "tempDiffIndoor": "Desired Indoor Temperature",
+  "tempDiffDifference": "Difference",
+  "tempDiffFactor": "Temperature Difference Factor",
+  "insulTitle": "Compute the heat insulation rating for the given area.",
+  "insulTitleOne": "Insulated",
+  "insulDescOne": "Enclosed area with doors and windows in place.",
+  "insulTitleTwo": "Well Insulated",
+  "insulDescTwo": "Sealed environment. Walls constructed but lacking insulation. Doors and windows shielded with plastic sheets or tarps.",
+  "insulTitleThree": "Poorly Insulated",
+  "insulDescThree": "Semi-enclosed area with numerous walls in place.",
+  "insulTitleFour": "Not Insulated",
+  "insulDescFour": "Uncovered area with primary walls not yet built.",
+  "insulFactor": "Factor",
+  "finalTitle": "Required number of BTUs"
+}

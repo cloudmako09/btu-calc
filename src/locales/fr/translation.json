@@ -1,0 +1,23 @@
+{
+  "cubicFeetTitle": "Déterminez le volume en pieds cubes qui doit être chauffé.",
+  "cubicFeetWidth": "Largeur (pi)",
+  "cubicFeetLength": "Longueur (pi)",
+  "cubicFeetHeight": "Hauteur (pi)",
+  "cubicFeetTotal": "Nombre de pieds carrés",
+  "tempDiffTitle": "Déterminez le différentiel de température (en degrés Celsius).",
+  "tempDiffOutdoor": "Température extérieure",
+  "tempDiffIndoor": "Température intérieure souhaitée",
+  "tempDiffDifference": "Différence",
+  "tempDiffFactor": "Facteur de différence de température",
+  "insulTitle": "Calculer l'indice d'isolation thermique pour la zone donnée.",
+  "insulTitleOne": "Isolation",
+  "insulDescOne": "Espace clos avec portes et fenêtres en place.",
+  "insulTitleTwo": "Bien isolé",
+  "insulDescTwo": "Environnement étanche. Les murs sont construits mais manquent d'isolation. Portes et fenêtres protégées par des feuilles de plastique ou des bâches.",
+  "insulTitleThree": "Mal isolé",
+  "insulDescThree": "Zone semi-fermée avec de nombreux murs en place.",
+  "insulTitleFour": "Non isolé",
+  "insulDescFour": "Zone non couverte dont les murs principaux n'ont pas encore été construits.",
+  "insulFactor": "Facteur",
+  "finalTitle": "Nombre de BTU requis"
+}

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import { Result } from "../result/result";
 import useCalcSquareFeetStore from "../../useCalcSquareFeetStore";
@@ -5,14 +6,18 @@ import useTempDiffFactorStore from "../../useTempDiffFactorStore";
 import useInsulFactorStore from "../../useInsulFactorStore";
 
 export const FinalResult = () => {
+  const { t } = useTranslation();
   const { getCalcResult } = useCalcSquareFeetStore();
   const { getTempDiffResult } = useTempDiffFactorStore();
-  const { getInsul } = useInsulFactorStore();
+  const { insul } = useInsulFactorStore();
 
   const finalResult = () => {
-    const result = getCalcResult() * getTempDiffResult() * getInsul();
+    const result = getCalcResult() * getTempDiffResult() * insul;
     return result;
   };
+
+  console.log("Square Footage Result", getCalcResult());
+  console.log("Temp Diff Result", getTempDiffResult());
 
   return (
     <>
@@ -20,10 +25,7 @@ export const FinalResult = () => {
         <Container>
           <Row>
             <Col lg="12">
-              <Result
-                heading="Required number of BTUs"
-                number={finalResult()}
-              />
+              <Result heading={t("finalTitle")} number={finalResult()} />
             </Col>
           </Row>
         </Container>

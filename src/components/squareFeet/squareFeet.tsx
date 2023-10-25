@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Input } from "../input/Input";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { Result } from "../result/result";
@@ -7,6 +8,7 @@ import "./square-feet.scss";
 import "../result/result.scss";
 
 export const SquareFeet = () => {
+  const { t } = useTranslation();
   const {
     width,
     length,
@@ -39,13 +41,13 @@ export const SquareFeet = () => {
           <div className="box red">
             <Row>
               <Col lg="12">
-                <h2>Determine the volume in cubic feet that needs heating.</h2>
+                <h2>{t("cubicFeetTitle")}</h2>
               </Col>
             </Row>
             <Row>
               <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Width (ft)</Form.Label>
+                  <Form.Label>{t("cubicFeetWidth")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Input
                       value={width}
@@ -58,7 +60,7 @@ export const SquareFeet = () => {
               </Col>
               <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Length (ft)</Form.Label>
+                  <Form.Label>{t("cubicFeetLength")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Input
                       value={length}
@@ -71,7 +73,7 @@ export const SquareFeet = () => {
               </Col>
               <Col lg="3" className="d-flex align-items-center">
                 <Form.Group>
-                  <Form.Label>Height (ft)</Form.Label>
+                  <Form.Label>{t("cubicFeetHeight")}</Form.Label>
                   <div className="d-flex align-items-center">
                     <Input
                       value={height}
@@ -82,9 +84,9 @@ export const SquareFeet = () => {
                   </div>
                 </Form.Group>
               </Col>
-              <Col lg="3">
+              <Col lg="3" className="d-flex align-items-center">
                 <Result
-                  heading="Number of square feet"
+                  heading={t("cubicFeetTotal")}
                   number={getCalcResult()}
                 />
               </Col>

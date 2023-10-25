@@ -3,8 +3,11 @@
 
 .difference {
   background: $grey;
-  width: 100%;
-  padding: 18px;
+  width: 190px;
+  padding: 22px;
+  h4 {
+    margin-bottom: 0px !important;
+  }
   @include bp-tablet-sm {
     margin-bottom: 20px;
   }

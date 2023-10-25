@@ -27,6 +27,7 @@ export const CheckBox: React.FC<Props> = ({
           name={name}
           onChange={onChange}
           defaultChecked={checked}
+          aria-label="radio"
         />
         <h3>{heading}</h3>
         <p>{desc}</p>
